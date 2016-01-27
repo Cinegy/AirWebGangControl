@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Cinegy Air Region Control</title>
+    <!--http://stackoverflow.com/questions/25557299/internet-explorer-11-disable-display-intranet-sites-in-compatibility-view-via-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- IE -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <!-- other browsers -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <link rel="stylesheet" href="./stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="./stylesheets/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./stylesheets/index.css"/>
+
+    <script type="text/javascript" src="./javascripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="./javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./javascripts/knockout-3.4.0.js"></script>
+    <script type="text/javascript" src="./javascripts/index.js"></script>
+</head>
+<body>
+
+<div id="mainHeader">
+    <div id="mainHeaderProductName">Cinegy Air Regional Control</div>
+</div>
+    
+<div class="engineList">    
+    <div class="groupBoxLabel">ENGINES - NSW</div>
+    <div class="groupBox">
+        <table>
+            <tr>
+                <td>
+                    <div class="buttonCaption">NSW</div>
+                    <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['NSW']), css: ButtonIsDepressed('NSW') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption">SYD</div>
+                    <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['SYD']), css: ButtonIsDepressed('SYD') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption">VIC</div>
+                        <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['VIC']), css: ButtonIsDepressed('VIC') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>  
+                <td>
+                    <div class="buttonCaption">MEL</div>
+                        <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['MEL']), css: ButtonIsDepressed('MEL') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>  
+                <td>
+                    <div class="buttonCaption">TAZ</div>
+                        <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['TAZ']), css: ButtonIsDepressed('TAZ') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption buttonCaption-selectAll">ALL</div>
+                    <div type="button" class="btn btn-select" style="margin: 0px 0 10px 50px" data-bind="click: onToggleButtons.bind($data, ['NSW','SYD','VIC','MEL','TAZ'])" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="engineList">    
+    <div class="groupBoxLabel">ENGINES - QLD & SA</div>
+    <div class="groupBox ">
+        <table>
+            <tr>
+                <td>
+                    <div class="buttonCaption">QLD</div>
+                    <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['QLD']), css: ButtonIsDepressed('QLD') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption">BRI</div>
+                    <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['BRI']), css: ButtonIsDepressed('BRI') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption">SA</div>
+                        <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['SA']), css: ButtonIsDepressed('SA') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>  
+                <td>
+                    <div class="buttonCaption">ADE</div>
+                        <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['ADE']), css: ButtonIsDepressed('ADE') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>  
+                <td>
+                    <div class="buttonCaption buttonCaption-selectAll">ALL</div>
+                    <div type="button" class="btn btn-select" style="margin: 0px 0 10px 50px" data-bind="click: onToggleButtons.bind($data, ['QLD','BRI','SA','ADE'])" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    
+    </div>
+</div>    
+
+<div class="engineList">    
+    <div class="groupBoxLabel">ENGINES - WA & DAR</div>
+    <div class="groupBox ">
+        <table>
+            <tr>
+                <td>
+                    <div class="buttonCaption">WA</div>
+                    <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['WA']), css: ButtonIsDepressed('WA') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption">PER</div>
+                    <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['PER']), css: ButtonIsDepressed('PER') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption">DAR</div>
+                        <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['DAR']), css: ButtonIsDepressed('DAR') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption buttonCaption-selectAll">ALL</div>
+                    <div type="button" class="btn btn-select" style="margin: 0px 0 10px 50px" data-bind="click: onToggleButtons.bind($data, ['WA','PER','DAR'])" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>      
+  
+    
+<div class="engineActions">  
+    <div class="groupBoxLabel">AIR COMMANDS</div>  
+    <div class="groupBox groupBox-actions">
+        <table>
+            <tr>
+                <td>
+                    <div class="buttonCaption">GO NORML</div>
+                    <div type="button" data-bind="click: onGoNormal, css: CanGoNormal() == false  ? 'btn btn-disable' : 'btn btn-goNormal'">
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption">START CUED</div>
+                    <div type="button"  data-bind="click: onStartCued, css: CanStartCued() == false ? 'btn btn-disable' : 'btn btn-startCued'">
+                        <div class="circle" style="background: white"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption">GO LIVE</div>
+                    <div type="button" data-bind="click: onGoLive, css: CanGoLive() == false ? 'btn btn-disable' : 'btn btn-goLive'">
+                        <div class="circle" style="background: white"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption">GO CLEAN</div>
+                    <div type="button" data-bind="click: onGoClean, css: CanGoClean() == false ? 'btn btn-disable' : 'btn btn-goClean' ">
+                        <div class="circle" style="background: white"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="buttonCaption">GO BLACK</div>
+                    <div type="button" data-bind="click: onGoBlack, css: CanGoBlack() == false ? 'btn btn-disable' : 'btn btn-goBlack' ">
+                        <div class="circle" style="background: white"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>      
+</div>
+
+</body>
+</html>
