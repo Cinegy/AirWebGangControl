@@ -30,3 +30,5 @@ If you want to host this outside of the whole NodeJS thing (maybe as a static si
 folder, and copy the file /views/index.html into this folder - and deploy the contents of that 'public' folder how you wish!
 
 The whole NodeJS / Express thing is really just for an easy life when debugging / adjusting the panel.
+
+##Please note - only IE seems to work propery currently with the pre-release Air, this will go away once we implement OPTIONS HTTP headers into the integrated Air engine
