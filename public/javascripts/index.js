@@ -1,4 +1,20 @@
-﻿/*Global variables*/
+﻿/*
+Copyright 2016 Cinegy GmbH
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+/*Global variables*/
 //var TemplateWindow;
 
 $(document).ready(function () {
@@ -10,9 +26,12 @@ $(document).ready(function () {
         
         self.serverMappings = {};
         
-        self.serverMappings["NSW"] = "http://localhost:5521";
-        self.serverMappings["SYD"] = "http://localhost:5522";
-        self.serverMappings["VIC"] = "http://localhost:5523";
+        //set up your server mappings here, relating button IDs to physical engines and instances
+        
+        //TODO: Make this into external JSON file
+        self.serverMappings["1"] = "http://localhost:5521";
+        self.serverMappings["2"] = "http://localhost:5522";
+        self.serverMappings["3"] = "http://localhost:5523";
        
         //Wire up methods that are exposed via KnockOut
         self.onStartCued = function () {
