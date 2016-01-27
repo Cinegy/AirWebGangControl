@@ -29,9 +29,9 @@ $(document).ready(function () {
         //set up your server mappings here, relating button IDs to physical engines and instances
         
         //TODO: Make this into external JSON file
-        self.serverMappings["1"] = "http://localhost:5521";
-        self.serverMappings["2"] = "http://localhost:5522";
-        self.serverMappings["3"] = "http://localhost:5523";
+        self.serverMappings["NTH1"] = "http://localhost:5521";
+        self.serverMappings["NTH2"] = "http://localhost:5522";
+        self.serverMappings["NTH3"] = "http://localhost:5523";
        
         //Wire up methods that are exposed via KnockOut
         self.onStartCued = function () {
