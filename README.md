@@ -8,8 +8,9 @@ An HTML5 page, hosted inside a NodeJS Express Project for easy development, to d
 * Install your NodeJS enviroment, then clone this repository into a folder
 * Go into the folder, and then let npm fill in all the dependencies
 
-$ cd myapp
-$ npm install
+>$ cd myapp
+
+>$ npm install
 
 * Start up Express to host the app:
 
