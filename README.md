@@ -1,23 +1,23 @@
 # AirWebGangControl
 An HTML5 page, hosted inside a NodeJS Express Project for easy development, to drive gangs of Cinegy Air Playout Engines.
 
-##Uses the Cinegy Playout V11 REST API - if you have Air V10 (or an older prerelease V11) then only 'start cued' button will do anything!
+>Uses the Cinegy Playout V11 REST API - if you have Air V10 (or an older prerelease V11) then only 'start cued' button will do anything!
 
 #Running
 
-1. Install your NodeJS enviroment, then clone this repository into a folder
-2. Go into the folder, and then let npm fill in all the dependencies
+* Install your NodeJS enviroment, then clone this repository into a folder
+* Go into the folder, and then let npm fill in all the dependencies
 
 $ cd myapp
 $ npm install
 
-3. Start up Express to host the app:
+* Start up Express to host the app:
 
-* On MacOS or Linux, run the app with this command:
+_On MacOS or Linux, run the app with this command:_
 
-$ DEBUG=AirWebGangControl:* npm start
+> DEBUG=AirWebGangControl:* npm start
 
-* On Windows, use this command:
+_On Windows, use this command:_
 
 > set DEBUG=AirWebGangControl:* & npm start
 
