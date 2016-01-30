@@ -3,6 +3,8 @@ An HTML5 page, hosted inside a NodeJS Express Project for easy development, to d
 
 >Uses the Cinegy Playout V11 REST API - if you have Air V10 (or an older prerelease V11) then only 'start cued' button will do anything!
 
+>Air V11 preview builds from V11.0.0.2219 have the extra REST methods and OPTIONS preflight CORS support added for cross-browser happiness.
+
 #Running
 
 * Install your NodeJS enviroment, then clone this repository into a folder
@@ -31,5 +33,3 @@ If you want to host this outside of the whole NodeJS thing (maybe as a static si
 folder, and copy the file /views/index.html into this folder - and deploy the contents of that 'public' folder how you wish!
 
 The whole NodeJS / Express thing is really just for an easy life when debugging / adjusting the panel.
-
-##Please note - only IE seems to work propery currently with the pre-release Air, this will go away once we implement OPTIONS HTTP headers into the integrated Air engine
