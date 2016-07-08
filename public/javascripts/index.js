@@ -44,6 +44,7 @@ $(document).ready(function () {
         
         self.onGoLive = function () {
             ChangeOutputStatus(self, "Bypass");
+			onStartCuedHandler(self);
         };
         
         self.onGoClean = function () {
