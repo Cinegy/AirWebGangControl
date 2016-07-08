@@ -24,14 +24,11 @@ $(document).ready(function () {
         
         self.depressedButtons = ko.observableArray();
         
-        self.serverMappings = {};
-        
-        //set up your server mappings here, relating button IDs to physical engines and instances
-        
-        //TODO: Make this into external JSON file
-        self.serverMappings["NTH1"] = "http://localhost:5521";
-        self.serverMappings["NTH2"] = "http://localhost:5522";
-        self.serverMappings["NTH3"] = "http://localhost:5523";
+        //engines are loaded from configuration JSON file - 
+        //each key can have multiple target engine URLs as an array (mainly for main / backup scenarions)
+        $.getJSON('../configuration/engines.json', function(data) {
+            self.serverMappings = data;
+        });
        
         //Wire up methods that are exposed via KnockOut
         self.onStartCued = function () {
@@ -101,34 +98,32 @@ $(document).ready(function () {
     
     function onStartCuedHandler(engineViewModel) {
         var cueCmdXml = "<Request><StartCued/><Request>";
-        
-        engineViewModel.depressedButtons().forEach(function(element) {
-            var url = engineViewModel.serverMappings[element] +"/video/command";
-            $.ajax({
-                url: url,
-                type: "POST",
-                dataType: 'xml',
-                contentType: "text/xml; charset=utf-8",
-                data: cueCmdXml,
-            });
-         }, this);
+       
+        issueServerCommand(engineViewModel, cueCmdXml);
     }
     
     function ChangeOutputStatus(engineViewModel, newState) {
         var cueCmdXml = '<Request><SetOutput State="' + newState + '"/></Request>';
         
-        engineViewModel.depressedButtons().forEach(function(element) {
-            var url = engineViewModel.serverMappings[element] +"/video/command";
-            $.ajax({
-                url: url,
-                type: "POST",
-                dataType: 'xml',
-                contentType: "text/xml; charset=utf-8",
-                data: cueCmdXml,
-            });
-         }, this);
+        issueServerCommand(engineViewModel, cueCmdXml);
     }
    
+    function issueServerCommand(engineViewModel, command)
+    {
+          engineViewModel.depressedButtons().forEach(function(element) {
+            engineViewModel.serverMappings[element].forEach(function(element) {
+                var url = element +"/video/command";
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: 'xml',
+                    contentType: "text/xml; charset=utf-8",
+                    data: command,
+                });
+            }, this);
+         }, this);
+    }
+
     function onCueNextHandler(engineViewModel) {
         alert("Not yet supported - Air Engine API has no 'Cue Next' - need to address new controller API instead!")
     }

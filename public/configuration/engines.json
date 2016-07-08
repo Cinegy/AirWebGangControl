@@ -1,0 +1,7 @@
+{
+ 
+    "NTH1": [ "http://localhost:5521", "http://localhost5522"],
+    "NTH2": [ "http://localhost:5523", "http://localhost5524"],
+    "NTH3": [ "http://localhost:5525"]
+        
+}
