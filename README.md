@@ -1,9 +1,7 @@
 # AirWebGangControl
 An HTML5 page, hosted inside a NodeJS Express Project for easy development, to drive gangs of Cinegy Air Playout Engines.
 
->Uses the Cinegy Playout V11 REST API - if you have Air V10 (or an older prerelease V11) then only 'start cued' button will do anything!
-
->Air V11 preview builds from V11.0.0.2219 have the extra REST methods and OPTIONS preflight CORS support added for cross-browser happiness.
+>Uses the Cinegy Playout V11 REST API - any prior version of Air (or an older prerelease V11) will not work.
 
 #Running
 
