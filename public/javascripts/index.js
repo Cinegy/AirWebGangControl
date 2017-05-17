@@ -52,9 +52,12 @@ $(document).ready(function () {
             ChangeOutputStatus(self, "Black");
         };
         
-        
         self.onToggleButtons = function (data, event) {
             onToggleButtonHandler(self, data);
+        };        
+		
+	self.onDeselectButtons = function (data, event) {
+            onDeselectButtonHandler(self, data);
         };
                         
         self.CanStartCued = ko.pureComputed(function() {
@@ -77,7 +80,7 @@ $(document).ready(function () {
        
     };
 	
-	var viewModelObj = new ViewModel()    
+    var viewModelObj = new ViewModel()    
     ko.applyBindings(viewModelObj);
     
     function onToggleButtonHandler(engineViewModel, buttonIds) {
@@ -94,8 +97,17 @@ $(document).ready(function () {
             }
         }
     }
+	
+    function onDeselectButtonHandler(engineViewModel, buttonIds) {    
+        for(var n in buttonIds)
+        {   
+            if(engineViewModel.depressedButtons.indexOf(buttonIds[n]) > -1)
+            {
+                engineViewModel.depressedButtons.remove(buttonIds[n]);
+            }
+        }
+    }
 
-    
     function onStartCuedHandler(engineViewModel) {
         var cueCmdXml = "<Request><StartCued/><Request>";
        
@@ -133,6 +145,5 @@ $(document).ready(function () {
         if(engineViewModel.depressedButtons().length < 1)
             return false;
     }
-
 	
 });
