@@ -61,6 +61,12 @@
                     </div>
                 </td>
                 <td>
+                    <div class="buttonCaption buttonCaption-clearAll">CLR</div>
+                    <div type="button" class="btn btn-select" style="margin: 0px 0 10px 50px" data-bind="click: onDeselectButtons.bind($data, ['NTH1','NTH2','NTH3','NTH4','NTH5'])" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>
+                <td>
                     <div class="buttonCaption buttonCaption-selectAll">ALL</div>
                     <div type="button" class="btn btn-select" style="margin: 0px 0 10px 50px" data-bind="click: onToggleButtons.bind($data, ['NTH1','NTH2','NTH3','NTH4','NTH5'])" >
                         <div class="square" style="background: black"></div>
@@ -99,7 +105,13 @@
                         <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['EST4']), css: ButtonIsDepressed('EST4') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
                         <div class="square" style="background: black"></div>
                     </div>
-                </td>  
+                </td> 
+                <td>
+                    <div class="buttonCaption buttonCaption-clearAll">CLR</div>
+                    <div type="button" class="btn btn-select" style="margin: 0px 0 10px 50px" data-bind="click: onDeselectButtons.bind($data, ['EST1','EST2','EST3','EST4'])" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td> 
                 <td>
                     <div class="buttonCaption buttonCaption-selectAll">ALL</div>
                     <div type="button" class="btn btn-select" style="margin: 0px 0 10px 50px" data-bind="click: onToggleButtons.bind($data, ['EST1','EST2','EST3','EST4'])" >
@@ -132,6 +144,12 @@
                 <td>
                     <div class="buttonCaption">STH3</div>
                         <div type="button" class="btn btn-select" data-bind="click: onToggleButtons.bind($data, ['STH3']), css: ButtonIsDepressed('STH3') == false ? 'btn btn-select' : 'btn btn-select-depressed'" >
+                        <div class="square" style="background: black"></div>
+                    </div>
+                </td>    
+                <td>
+                    <div class="buttonCaption buttonCaption-clearAll">ALL</div>
+                    <div type="button" class="btn btn-select" style="margin: 0px 0 10px 50px" data-bind="click: onDeselectButtons.bind($data, ['STH1','STH2','STH3'])" >
                         <div class="square" style="background: black"></div>
                     </div>
                 </td>
