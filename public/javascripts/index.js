@@ -109,7 +109,7 @@ $(document).ready(function () {
     }
 
     function onStartCuedHandler(engineViewModel) {
-        var cueCmdXml = "<Request><StartCued/><Request>";
+        var cueCmdXml = "<Request><StartCued/></Request>";
        
         issueServerCommand(engineViewModel, cueCmdXml);
     }
